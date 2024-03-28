@@ -1,0 +1,123 @@
+/* Resetting default browser styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Light text color */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #fff; /* Light text color */
+    text-transform: uppercase;
+}
+
+.form-container {
+    margin-bottom: 30px;
+    background-color: #444; /* Darker background color */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-field {
+    padding: 12px;
+    width: calc(100% - 24px); /* Adjusting for padding */
+    border: 1px solid #666; /* Darker border color */
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    font-size: 16px;
+    background-color: #555; /* Darker background color */
+    color: #fff; /* Light text color */
+}
+
+.input-field:focus {
+    border-color: #007bff;
+    outline: none; /* Removing default outline */
+}
+
+.input-field[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.input-field[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Increasing size on hover */
+}
+
+.prediction-container {
+    margin-top: 20px;
+    background-color: #444; /* Darker background color */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom styling for select elements */
+.Coustem.selecter {
+    position: relative;
+}
+
+.Coustem.selecter select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 12px;
+    width: calc(100% - 24px); /* Adjusting for padding */
+    border: 1px solid #666; /* Darker border color */
+    border-radius: 5px;
+    background-color: #555; /* Darker background color */
+    font-size: 16px;
+    color: #fff; /* Light text color */
+    cursor: pointer; /* Adding pointer cursor */
+}
+
+/* Styling for checkboxes */
+.input-field[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Additional styling for form labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff; /* Light text color */
+    font-size: 16px;
+}
+
+/* Styling for form checkboxes */
+.input-field[type="checkbox"] + label {
+    color: #fff; /* Light text color */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.input-field[type="checkbox"] + label:hover {
+    color: #007bff;
+}
+
+/* Additional styling for prediction text */
+.prediction-container h2 {
+    color: #007bff;
+    margin-top: 20px;
+    font-size: 24px;
+}

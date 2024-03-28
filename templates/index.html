@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Price Prediction</h1>
+        <div class="form-container">
+            <form action="/predict" method="post" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="ram">RAM:</label>
+                    <input type="text" id="ram" name="ram" class="input-field" required>
+                </div>
+                <div class="form-group">
+                    <label for="weight">Weight:</label>
+                    <input type="text" id="weight" name="weight" class="input-field" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company:</label>
+                    <div class="Coustem selecter">
+                        <select id="company" name="company" class="input-field" required>
+                            <option value="acer">Acer</option>
+                            <option value="apple">Apple</option>
+                            <option value="asus">Asus</option>
+                            <option value="dell">Dell</option>
+                            <option value="hp">HP</option>
+                            <option value="lenovo">Lenovo</option>
+                            <option value="msi">MSI</option>
+                            <option value="toshiba">Toshiba</option>
+                            <option value="others">Others</option>
+                            <!-- Add more options for other companies -->
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cpu">CPU:</label>
+                    <div class="Coustem selecter">
+                        <select id="cpu" name="cpu" class="input-field" required>
+                            <option value="amd">AMD</option>
+                            <option value="intel_core_i3">Intel Core i3</option>
+                            <option value="intel_core_i5">Intel Core i5</option>
+                            <option value="intel_core_i7">Intel Core i7</option>
+                            <option value="other">Other</option>
+                            <!-- Add more options for other CPU types -->
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="gpu">GPU:</label>
+                    <div class="Coustem selecter">
+                        <select id="gpu" name="gpu" class="input-field" required>
+                            <option value="amd_graphics">AMD Graphics</option>
+                            <option value="arm_graphics">ARM Graphics</option>
+                            <option value="intel_graphics">Intel Graphics</option>
+                            <option value="nvidia_graphics">Nvidia Graphics</option>
+                            <!-- Add more options for other GPU types -->
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="opsyss">Operating System:</label>
+                    <div class="Coustem selecter">
+                        <select id="opsyss" name="opsyss" class="input-field" required>
+                            <option value="mac">Mac</option>
+                            <option value="windows">Windows</option>
+                            <option value="others">Others</option>
+                            <!-- Add more options for other operating systems -->
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="typename">Type Name:</label>
+                    <div class="Coustem selecter">
+                        <select id="typename" name="typename" class="input-field" required>
+                            <option value="2_in_1_convertible">2 in 1 Convertible</option>
+                            <option value="gaming">Gaming</option>
+                            <option value="netbook">Netbook</option>
+                            <option value="notebook">Notebook</option>
+                            <option value="ultrabook">Ultrabook</option>
+                            <option value="workstation">Workstation</option>
+                            <!-- Add more options for other Type Names -->
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Features:</label><br>
+                    <div class="Coustem selecter">
+                        <select id="features" name="features" class="input-field">
+                            <option value="none">None</option>
+                            <option value="touchscreen">Touchscreen</option>
+                            <option value="ips">IPS</option>
+                            <option value="full_hd">Full HD</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Predict">
+                </div>
+            </form>
+
+        </div>
+        <div class="prediction-container">
+            {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
